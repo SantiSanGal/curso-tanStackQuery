@@ -1,0 +1,1 @@
+export { getLabels } from "./get-labels.action";

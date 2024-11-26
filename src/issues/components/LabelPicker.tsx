@@ -1,4 +1,22 @@
+import { useQuery } from "@tanstack/react-query";
+import { getLabels } from "../actions";
+
 export const LabelPicker = () => {
+
+  const labelsQuery = useQuery({
+    queryKey: ['labels'],
+    queryFn: getLabels,
+  })
+
+  if (labelsQuery.isLoading) {
+    return (
+      <div className="flex justify-center items-center h-25">
+        Espere...
+      </div>
+    )
+  } 
+
+
   return (
     <>
       <span
